@@ -1,3 +1,7 @@
+
+
+
+
 const pets = [
     {
       name: "Dusty",
