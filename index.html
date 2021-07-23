@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Document</title>
+    <title>Pet Adoption</title>
 </head>
 <body>
-    
+
+        <div class="buttons">
+        
+              <button id="cat-filter"  type="button" class="btn btn-primary" onclick="filterCats()">Cats</button>
+              <button type="button" class="btn btn-secondary" onclick="filterDogs()">Secondary</button>
+              <button type="button" class="btn btn-success" onclick="filterDinos()">Success</button>
+              <button type="button" class="btn btn-danger" onclick="removeFilter()">Danger</button>       
+            
+        </div>
+
+        <div>
+            <p class="card0"></p>
+        </div>
+
+        <div>
+            <p class="cards"></p>
+        </div>
+
+        <div>
+            <p class="cards"></p>
+        </div>
     <script src="main.js"></script>
 </body>
 </html>
