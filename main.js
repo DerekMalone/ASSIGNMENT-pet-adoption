@@ -1,23 +1,28 @@
 
 
 //const buttons = document.querySelector(".buttons");
-//const cards = document.querySelector(".cards");
+const div = document.querySelector('#card');
+const cards = document.querySelector("#card0");
 
 
 
 
-function filterCats()  {
+function filterCats() {
  document.getElementById("cat-filter").innerHTML = "CLICKED";
+ catfilter();
  }
-// fitlerDogs = () => {
-
-// }
-// fitlerDinos = () => {
-
-// }
-// removeFilter = () => {
-
-// }
+function filterDogs () {
+  document.getElementById("dog-filter").innerHTML = "CLICKED";
+  dogfilter();
+ }
+function filterDinos () {
+  document.getElementById("dino-filter").innerHTML = "CLICKED";
+  dinofilter()
+}
+function removeFilter () {
+  document.getElementById("remove-filter").innerHTML = "CLICKED";
+  unfilter()
+}
 
 
 const pets = [
@@ -233,24 +238,37 @@ const pets = [
     }
   ];
 
+function catfilter () {
+  Object.values(pets).forEach(pet => {
+     if (pet.type === "cat") {
+      cards.remove(pet.name !== "cat");
+      console.log(pet.name);
+    }
+  })
+}
+
+function dogfilter () {
   Object.values(pets).forEach(pet => {
     if (pet.type === "dog") {
-      console.log(pet.name)
+      cards.remove(pet.name !== "dog");
+      console.log(pet.name);
     }
   })
-  Object.values(pets).forEach(pet => {
-    if (pet.type === "cat") {
-      console.log(pet.name)
-    }
-  })
-  Object.values(pets).forEach(pet => {
-    if (pet.type === "dino") {
-      console.log(pet.name)
-    }
-  })
+}
 
-//   pets.forEach(function(key) => ({
-//     console.log(pets[key]);
-// }));
-
-  //pet(pets);
+  function dinofilter () {
+    Object.values(pets).forEach(pet => {
+      if (pet.type === "dino") {
+        cards.remove(pet.name !== "dino");
+        console.log(pet.name);
+      }
+    })
+  }
+  
+  function unfilter () {
+    Object.values(pets).forEach(pet => {
+      if (pet.type === "cat" || "dog" || "dino") {
+      console.log(pet.name);
+      }
+    })
+  }
