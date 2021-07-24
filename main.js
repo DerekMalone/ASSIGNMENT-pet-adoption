@@ -1,5 +1,28 @@
 
 
+//const buttons = document.querySelector(".buttons");
+const div = document.querySelector('#card');
+const cards = document.querySelector("#card0");
+
+
+
+
+function filterCats() {
+ document.getElementById("cat-filter").innerHTML = "CLICKED";
+ catfilter();
+ }
+function filterDogs () {
+  document.getElementById("dog-filter").innerHTML = "CLICKED";
+  dogfilter();
+ }
+function filterDinos () {
+  document.getElementById("dino-filter").innerHTML = "CLICKED";
+  dinofilter()
+}
+function removeFilter () {
+  document.getElementById("remove-filter").innerHTML = "CLICKED";
+  unfilter()
+}
 
 
 const pets = [
@@ -214,3 +237,38 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+function catfilter () {
+  Object.values(pets).forEach(pet => {
+     if (pet.type === "cat") {
+      cards.remove(pet.name !== "cat");
+      console.log(pet.name);
+    }
+  })
+}
+
+function dogfilter () {
+  Object.values(pets).forEach(pet => {
+    if (pet.type === "dog") {
+      cards.remove(pet.name !== "dog");
+      console.log(pet.name);
+    }
+  })
+}
+
+  function dinofilter () {
+    Object.values(pets).forEach(pet => {
+      if (pet.type === "dino") {
+        cards.remove(pet.name !== "dino");
+        console.log(pet.name);
+      }
+    })
+  }
+  
+  function unfilter () {
+    Object.values(pets).forEach(pet => {
+      if (pet.type === "cat" || "dog" || "dino") {
+      console.log(pet.name);
+      }
+    })
+  }
