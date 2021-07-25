@@ -225,15 +225,15 @@ function filterCats() {
  }
 function filterDogs () {
   document.getElementById("dog-filter").innerHTML = "CLICKED";
-  dogfilter();
+  petFilter(pets, "type", "dog");
  }
 function filterDinos () {
   document.getElementById("dino-filter").innerHTML = "CLICKED";
-  dinofilter()
+  petFilter(pets, "type", "dino");
 }
 function removeFilter () {
   document.getElementById("remove-filter").innerHTML = "CLICKED";
-  unfilter()
+  petFilter(pets, "type");
 }
 
 
