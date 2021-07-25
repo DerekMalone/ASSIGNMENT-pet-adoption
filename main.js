@@ -211,7 +211,7 @@ const pets = [
     }
   ];
 
-
+// This is not pushing to GitHub.
 const buttons = document.querySelector(".buttons");
 const div = document.querySelector('#card');
 const cards = document.querySelector("#card0");
