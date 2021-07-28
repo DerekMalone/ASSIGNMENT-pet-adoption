@@ -1,7 +1,13 @@
 body {
-    display: flex;
+    background-color: blanchedalmond;
 }
 
-.cards {
-    
+.buttonStyles, .animalStyles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    margin: 10px;
 }
