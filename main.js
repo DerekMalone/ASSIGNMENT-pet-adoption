@@ -211,12 +211,13 @@ const pets = [
   }
 ];
 
+//Renders JS to DOM
   const renderToDom = (divId, textToPrint) => {
     const selectedDiv = document.querySelector(divId);
     selectedDiv.innerHTML = textToPrint;
 }
 
-
+//creates event listeners on the DOM
 const buttons = () => {
 
   const domString = `
@@ -229,7 +230,7 @@ const buttons = () => {
 }
 
 
-
+//handles button clicks and passes action based on click
 const handleButtonClick = (event) => {
   const animalArray = filterAnimals(pets, event.target.id)
 
@@ -241,7 +242,7 @@ const handleButtonClick = (event) => {
 
 }
 
-
+//passes cards to DOM 
 const animalList = (petsArray) => {
   let domString = "";
   petsArray.forEach((pet, i) => {
@@ -261,12 +262,15 @@ const animalList = (petsArray) => {
 
 }
 
+//filters animals that don't match the specific type we select
 const filterAnimals = (array, type) => {
   console.log(type);
   return array.filter(animalObject => animalObject.type === type);
 }
 
+//deletes an animal from the array
 const deleteAnimal = (event) => {
+
     const targetType = event.target.type;
     const targetId = event.target.id;
 
@@ -276,6 +280,7 @@ const deleteAnimal = (event) => {
     }
 }
 
+//creates event listener for clicks
 const buttonEvents = () => {
   document.querySelector('#buttonContainer')
     .addEventListener('click', handleButtonClick);
@@ -283,11 +288,12 @@ const buttonEvents = () => {
     document.querySelector("#animalsContainer").addEventListener("click", deleteAnimal);
 }
 
+//initializes website
 const init = () => {
   buttons();
   buttonEvents();
   animalList(pets);
   
 }
-
+//calls website into action.
 init();
